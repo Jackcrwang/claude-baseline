@@ -18,6 +18,7 @@
 | 一切情况 | `core/CLAUDE.md`（薄核） |
 | 中档及以上（多步/跨会话） | `modules/workflow` |
 | 简介提到游戏/玩法/原型/关卡/事件设计 | `modules/game-dev` |
+| 简介以调研/查明/取证/排查为主要交付 | `modules/research` |
 | 用 Codex（默认是，除非用户明确说不用） | `modules/codex-collab` |
 | 重档（正式项目） | `templates/` 四模板拷入项目 `docs/` |
 
