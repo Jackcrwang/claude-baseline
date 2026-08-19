@@ -15,7 +15,7 @@ description: Codex 主导项目的 Claude 跨家族生产与盲审模块。仅�
 ## 二、调用纪律
 
 1. 用一份落盘任务书驱动调用；任务书只含目标、只读输入白名单、输出要求、验收标准与停线点，不塞实现过程。
-2. 显式指定模型：`claude -p --model opus --output-format json`（低风险初筛可按项目证据选择较低档，但不得依赖默认模型）。
+2. 显式指定模型：`claude -p --model opus --output-format json`（低风险初筛可按项目证据选择较低档，但不得依赖默认模型）。调用发生在 Codex 沙箱内时需开沙箱联网（`-c sandbox_workspace_write.network_access=true` 或等价配置），否则必然失败；`claude` 复用用户本机登录态，若返回 401 先看是否 token 恰好过期（重跑一次即可判定），不要立刻让用户重新登录（本机实测 2026-08-18：同一命令前后两次一 401 一成功）。工作目录用 ASCII 路径，中文路径会被引号包装吃掉。
 3. 工具必须收窄为只读集合。推荐同时限制可见与自动许可工具：`--tools "Read,Glob,Grep" --allowedTools "Read,Glob,Grep"`；确需仓库命令时只增加窄化的只读 `Bash(...)` 模式，不开放 Edit/Write。
 4. 后台调用关闭 stdin：POSIX 用 `</dev/null`；PowerShell 启动器显式把标准输入重定向到空设备。启动后记录进程、耗时、退出码、stderr 与原始 JSON，不把“进程启动”当成功。
 5. 回传固定五项：结论 / 直接证据 / 未知与置信度 / 阻塞 / 可执行建议。另记录请求模型与返回的实际模型字段；模型自报身份不作证据。
