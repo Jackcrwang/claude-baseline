@@ -20,6 +20,7 @@
 | 简介提到游戏/玩法/原型/关卡/事件设计 | `modules/game-dev` |
 | 简介以调研/查明/取证/排查为主要交付 | `modules/research` |
 | 用 Codex（默认是，除非用户明确说不用） | `modules/codex-collab` |
+| 用户要把项目迁到另一模型家族/换总窗（可在项目中途单独装载） | `modules/migration` |
 | 重档（正式项目） | `templates/` 四模板拷入项目 `docs/` |
 
 **向用户复述拟装载清单与判定理由，等确认。**自动判断，不自动生效。
