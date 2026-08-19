@@ -35,6 +35,8 @@
 - **临时**：只在当前会话读取并遵守选中文件，不写盘。
 - **安装**：把薄核合并到项目根 `AGENTS.md`，把模块写入 `.agents/skills/`，重档模板写入 `docs/`。已有同名内容时展示差异并取得覆盖/合并授权。作用域仅限本项目目录，不影响其他项目与全局配置。
 
+**写入方式**：薄核与模块一律用 shell 复制（`Copy-Item` / `cp`）源文件，随后逐字节比对；不用 `apply_patch` 写 `.agents/`——Codex 0.147 的 apply_patch 会以 "writing outside of the project" 拒绝该目录（本机实测 2026-08-18），这不是沙箱只读，换 shell 即可，不要向用户报"目录只读"。
+
 交互会话可等待下一条确认。`codex exec` 第一次只提案并停止；确认后用 `codex exec --sandbox workspace-write resume <session-id> "已确认安装……"`（或新任务）继续。默认只读沙箱不能安装；托管策略仍可收窄权限。
 
 ## 第 4 步：执行并自述
