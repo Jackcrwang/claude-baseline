@@ -13,20 +13,25 @@
 
 本机路径示例：`E:\workflows\claude-baseline\`。新电脑先 `git clone <仓库URL>` 到任意位置，激活句里的路径换成 clone 位置即可。
 
-## 结构
+## 结构(2026-09 轻重构:三层核+单源双渲染+证据横切+病例按需)
 
 ```
-core/CLAUDE.md           薄核·Claude 渲染（沟通协议/诚实底线/方法论/任务分档；装载后每会话生效）
-core/AGENTS.md           薄核·Codex 渲染（同一判据，决策合同式：使命/默认姿态/硬边界/决策规则/交付/档位/地图）
-modules/workflow/        中重档工作流：工单制/交接/多代理/验收分级/证据纪律（两家族共用）
-modules/research/        调研纪律：假设穷尽/证据分层/台账-残差/收口（两家族共用）
-modules/game-dev/        游戏设计通用守则（两家族共用）
-modules/codex-collab/    Claude 主导时用 Codex（派单纪律/跨家族异源审查）
-modules/claude-collab/   Codex 主导时用 Claude 非 Fable 模型（启用判据/claude -p 调用纪律/跨家族盲审）
-modules/migration/       项目主导权跨家族/换窗迁移方法论（判据版：可迁性/分层迁/四件交接物/自检题/影子期）
-templates/               方向日志/工单/回执/恢复块 四模板（重档项目用）
-BOOTSTRAP.md             Claude 装载协议（判定表/护栏/临时vs安装）
-BOOTSTRAP-codex.md       Codex 装载协议（同上；模块装为 .agents/skills/<name>/SKILL.md）
+core/src/合同.md          常驻·协作合同(沟通/决策权/效力档/诚实红线/资源路由/压缩协作法/汇报节奏/回环句)
+core/src/原理.md          上任通读·判断原理库 17 条(每条:原则/保护什么/新伤;出生案例见 cases/)
+core/src/机制.md          按档·任务分档/加载四档/模块地图/渲染与维护
+core/CLAUDE.md           渲染件(Claude 宿主机制段+三层)——render.py 生成,勿手改
+core/AGENTS.md           渲染件(Codex 宿主机制段+三层)——同上;两家族判据零漂移
+render.py                单源双渲染脚本(改源后运行)
+cases/病例.md            原理的出生案例(去项目化,按需读)
+modules/evidence/        证据规范(唯一定义:模态×问题/成色/样本量/舆情/收敛/台账)
+modules/workflow/        中重档工作流(工单制/交接/多代理/验收分级/规则收敛)
+modules/research/        调研流程(立案/推进/行动/收口;证据条款引 evidence)
+modules/game-dev/        游戏设计守则(+成熟参考的设计层逆向节)
+modules/codex-collab/    Claude 主导时用 Codex(派单纪律/异源审查/档位二)
+modules/claude-collab/   Codex 主导时用 Claude
+modules/migration/       换总窗/跨家族迁移判据
+templates/               方向日志/工单/回执/恢复块
+BOOTSTRAP.md / BOOTSTRAP-codex.md   装载协议
 ```
 
 ## 三条不变式

@@ -15,10 +15,10 @@
 ## 第 2 步：按判定表拟装载清单
 | 判定 | 装载 |
 |---|---|
-| 一切情况 | `core/CLAUDE.md`（薄核） |
-| 中档及以上（多步/跨会话） | `modules/workflow` |
+| 一切情况 | `core/CLAUDE.md`（薄核=合同+原理+机制的渲染件；源在 `core/src/`，由 `render.py` 生成） |
+| 中档及以上（多步/跨会话） | `modules/workflow` + `modules/evidence` |
 | 简介提到游戏/玩法/原型/关卡/事件设计 | `modules/game-dev` |
-| 简介以调研/查明/取证/排查为主要交付 | `modules/research` |
+| 简介以调研/查明/取证/排查为主要交付 | `modules/research` + `modules/evidence` |
 | 用 Codex（默认是，除非用户明确说不用） | `modules/codex-collab` |
 | 用户要把项目迁到另一模型家族/换总窗（可在项目中途单独装载） | `modules/migration` |
 | 重档（正式项目） | `templates/` 四模板拷入项目 `docs/` |

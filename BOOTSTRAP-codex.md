@@ -20,10 +20,10 @@
 
 | 判定 | 拟装载 |
 |---|---|
-| 一切项目 | `core/AGENTS.md` → 项目根 `AGENTS.md` |
-| 中档及以上 | `modules/workflow/SKILL.md` |
+| 一切项目 | `core/AGENTS.md`（渲染件，源 `core/src/`）→ 项目根 `AGENTS.md` |
+| 中档及以上 | `modules/workflow/SKILL.md` + `modules/evidence/SKILL.md` |
 | 游戏/玩法/原型/关卡/事件设计 | `modules/game-dev/SKILL.md` |
-| 调研/查明/取证/排查是主要交付 | `modules/research/SKILL.md` |
+| 调研/查明/取证/排查是主要交付 | `modules/research/SKILL.md` + `modules/evidence/SKILL.md` |
 | 用户确认启用跨家族审查 | `modules/claude-collab/SKILL.md` |
 | 要把项目迁到另一模型家族/换总窗（可中途单独装载） | `modules/migration/SKILL.md` |
 | 重档正式项目 | `templates/` 四模板 → 项目 `docs/` |
